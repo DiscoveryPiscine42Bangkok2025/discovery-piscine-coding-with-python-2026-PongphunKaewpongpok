@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 input = input()
 
 if input.isdigit() and int(input) == 0:
