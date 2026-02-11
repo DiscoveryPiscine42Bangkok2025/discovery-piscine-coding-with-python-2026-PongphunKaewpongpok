@@ -1,11 +1,15 @@
-i = 0
+import sys
 
-while i <= 10:
-    print(f"Table de {i}:", end="")
+if len(sys.argv) == 1:
+    i = 0
+    while i <= 10:
+        print(f"Table de {i}:", end="")
 
-    j = 0
-    while j <= 10:
-        print("", i*j, end="")
-        j += 1
-    i += 1
-    print("")
+        j = 0
+        while j <= 10:
+            print("", i*j, end="")
+            j += 1
+        i += 1
+        print("")
+else:
+    print("none")
