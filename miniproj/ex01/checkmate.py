@@ -48,7 +48,6 @@ def is_check(board_matrix, board_size, king_pos):
             if board_matrix[row][column] == "P":
                  # Pawn can check at up-left and up-right of it position
                 if (((king_pos["column"] == column+1) or (king_pos["column"] == column-1)) and king_pos["row"] == row-1):
-                    print("Success")
                     return
 
             if board_matrix[row][column] == "R" or board_matrix[row][column] == "Q":
@@ -77,7 +76,6 @@ def is_check(board_matrix, board_size, king_pos):
                                 break
                     
                     if not got_block:
-                        print("Success")
                         return
 
             if board_matrix[row][column] == "B" or board_matrix[row][column] == "Q":
@@ -99,10 +97,7 @@ def is_check(board_matrix, board_size, king_pos):
                             break
                     
                     if not got_block:
-                        print("Success")
                         return
-
-    print("Error")
 
 
 def checkmate(board):

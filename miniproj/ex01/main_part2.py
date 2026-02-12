@@ -1,0 +1,23 @@
+import sys
+
+from algebraic_notation import algebraic_notation
+from checkmate import checkmate
+
+def main():
+    board = """\
+........
+........
+........
+........
+........
+........
+........
+........\
+"""
+    board_data = checkmate(board)
+    if board_data:
+        print("Pieces List:")
+        algebraic_notation(board_data)      # This algorithm prints all pieces on the board using algebraic notation. #
+
+if __name__ == "__main__":
+    main()

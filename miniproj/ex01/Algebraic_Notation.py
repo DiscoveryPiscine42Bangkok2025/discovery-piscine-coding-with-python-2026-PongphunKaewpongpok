@@ -1,7 +1,3 @@
-import sys
-
-from checkmate import checkmate
-
 pieces_can_block = ["R", "P", "Q", "B"]
 pieces_lists = ["K", "R", "P", "Q", "B"]
 
@@ -68,7 +64,7 @@ def is_piece_check(board_matrix, piece_data, king_pos):
 
 def algebraic_notation(board_data):
     board_matrix = board_data["board"]
-    board_size = board_data["size"]
+    board_size = board_data["board_size"]
     king_pos = board_data["king_pos"]
 
     if board_size > 26:
@@ -84,23 +80,4 @@ def algebraic_notation(board_data):
 
                 is_check = is_piece_check(board_matrix, piece_data, king_pos)
 
-                print(f"{board_matrix[row][column]}{ord('a'+column)}{board_data-row}{"+" if is_check else ''}")
-
-
-def main():
-    board = """\
-........
-........
-........
-........
-........
-........
-........
-........\
-"""
-    board_data = checkmate(board)
-    if board_data:
-        algebraic_notation(board_data)
-
-if __name__ == "__main__":
-    main()
+                print(f"- {board_matrix[row][column]}{chr(ord('a')+column)}{board_size-row}{"+" if is_check else ''}")
