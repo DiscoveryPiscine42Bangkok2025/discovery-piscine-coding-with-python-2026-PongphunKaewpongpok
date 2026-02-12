@@ -72,7 +72,7 @@ def is_check(board_matrix, board_size, king_pos):
 
                         while tem_c != king_pos["column"]:
                             tem_c = tem_c + step_c
-                            if board_matrix[tem_c][row] in pieces_can_block:
+                            if board_matrix[row][tem_c] in pieces_can_block:
                                 got_block = 1
                                 break
                     
